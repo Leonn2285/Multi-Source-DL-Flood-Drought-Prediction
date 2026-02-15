@@ -301,7 +301,8 @@ class CheckpointManager:
         if not os.path.exists(filepath):
             raise FileNotFoundError(f"Checkpoint not found: {filepath}")
         
-        checkpoint = torch.load(filepath, map_location="cpu")
+        # weights_only=False for PyTorch 2.6+ compatibility with numpy arrays
+        checkpoint = torch.load(filepath, map_location="cpu", weights_only=False)
         
         model.load_state_dict(checkpoint["model_state_dict"])
         

@@ -1,0 +1,52 @@
+{
+  "evaluation_date": "2026-02-15T09:28:56.755743",
+  "test_samples": 195480,
+  "flood_metrics": {
+    "accuracy": 0.9427204829138531,
+    "precision": 0.47251377905583514,
+    "recall": 0.9809950248756218,
+    "f1": 0.6378133592107391,
+    "roc_auc": 0.9918252607962722,
+    "average_precision": 0.8779719411023672,
+    "optimal_threshold": 0.8500000000000002,
+    "optimal_f1": 0.7856605901146401,
+    "confusion_matrix": [
+      [
+        174424,
+        11006
+      ],
+      [
+        191,
+        9859
+      ]
+    ]
+  },
+  "drought_metrics": {
+    "accuracy": 0.914963167587477,
+    "precision": 0.19402838481559692,
+    "recall": 0.9493032196059586,
+    "f1": 0.3222018348623853,
+    "roc_auc": 0.9681668074396431,
+    "average_precision": 0.4078224227454784,
+    "optimal_threshold": 0.9000000000000002,
+    "optimal_f1": 0.43174077142594125,
+    "confusion_matrix": [
+      [
+        174906,
+        16412
+      ],
+      [
+        211,
+        3951
+      ]
+    ]
+  },
+  "error_analysis": {
+    "flood_total_errors": 11197,
+    "flood_false_negatives": 191,
+    "flood_false_positives": 11006,
+    "drought_total_errors": 16623,
+    "drought_false_negatives": 211,
+    "drought_false_positives": 16412
+  }
+}

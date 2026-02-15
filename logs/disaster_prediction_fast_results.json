@@ -1,0 +1,46 @@
+{
+  "experiment_name": "disaster_prediction_fast",
+  "model_config": {
+    "encoder_output_dim": 64,
+    "cnn_channels": [
+      16,
+      32,
+      64
+    ],
+    "lstm_hidden_size": 64,
+    "lstm_num_layers": 1
+  },
+  "training_config": {
+    "num_epochs": 30,
+    "learning_rate": 0.001,
+    "batch_size": 512,
+    "sequence_length": 7
+  },
+  "best_epoch": 30,
+  "best_val_f1": 0.9654574608455344,
+  "test_metrics": {
+    "flood_accuracy": 0.9587067730714139,
+    "flood_precision": 0.9750748359289306,
+    "flood_recall": 0.9587067730714139,
+    "flood_f1": 0.9637741120584422,
+    "flood_precision_pos": 0.5571280036968577,
+    "flood_recall_pos": 0.9597014925373134,
+    "flood_f1_pos": 0.7049923251224326,
+    "flood_roc_auc": 0.9911614115691295,
+    "flood_avg_precision": 0.8862483817388176,
+    "drought_accuracy": 0.9406742377736853,
+    "drought_precision": 0.9794216420016666,
+    "drought_recall": 0.9406742377736853,
+    "drought_f1": 0.9560590091374499,
+    "drought_precision_pos": 0.23729771747579675,
+    "drought_recall_pos": 0.8068236424795772,
+    "drought_f1_pos": 0.36673401408835254,
+    "drought_roc_auc": 0.9553932032892406,
+    "drought_avg_precision": 0.4081514302402065,
+    "avg_accuracy": 0.9496905054225496,
+    "avg_precision": 0.9772482389652986,
+    "avg_recall": 0.9496905054225496,
+    "avg_f1": 0.9599165605979461
+  },
+  "total_training_time": 127935.71082615852
+}

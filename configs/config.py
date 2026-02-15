@@ -158,9 +158,44 @@ class ExperimentConfig:
                 self.device = "cpu"
 
 # ========================== DEFAULT CONFIG ==========================
-def get_config() -> ExperimentConfig:
-    """Get default experiment configuration"""
-    return ExperimentConfig()
+def get_config(fast_mode: bool = False) -> ExperimentConfig:
+    """
+    Get experiment configuration
+    
+    Args:
+        fast_mode: If True, uses smaller model and fewer epochs for faster training
+    """
+    config = ExperimentConfig()
+    
+    if fast_mode:
+        # ===== FAST MODE SETTINGS =====
+        # Reduce epochs significantly
+        config.training.num_epochs = 30
+        
+        # Increase batch size for faster training
+        config.data.batch_size = 512
+        
+        # Reduce early stopping patience
+        config.training.early_stopping_patience = 5
+        config.training.scheduler_patience = 3
+        
+        # Smaller model for faster training
+        config.model.encoder_output_dim = 64  # 128 → 64
+        config.model.cnn_channels = [16, 32, 64]  # Smaller CNN
+        config.model.lstm_hidden_size = 64  # 128 → 64
+        config.model.lstm_num_layers = 1  # 2 → 1 layer
+        config.model.mlp_hidden_sizes = [32, 64]  # Smaller MLP
+        config.model.fusion_hidden_sizes = [128, 64]  # Smaller fusion
+        
+        # Update experiment name
+        config.experiment_name = "disaster_prediction_fast"
+        
+    return config
+
+
+def get_fast_config() -> ExperimentConfig:
+    """Shortcut to get fast training configuration"""
+    return get_config(fast_mode=True)
 
 if __name__ == "__main__":
     # Print configuration for verification
